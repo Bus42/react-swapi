@@ -6,6 +6,7 @@ div.card {
 }
 #Menu {
   grid-gap: 8px;
+  min-height: 100vh;
 }
 @media all and (min-width: 901px) {
   #Menu {
