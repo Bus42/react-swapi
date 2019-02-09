@@ -25,7 +25,7 @@ class Header extends Component {
                             className="fas fa-journal-whills fa-3x"
                             style={{
                             cursor: "pointer",
-                            color: "var(--red)",
+                            color: "var(--silver)",
                             position: "absolute",
                             top: "10px",
                             right: "12px"

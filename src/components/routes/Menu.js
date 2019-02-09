@@ -57,7 +57,6 @@ class Menu extends Component {
 
     render() {
         let cards = [...this.state.cards];
-        console.log(cards);
 
         const Home = () => {
             return (
