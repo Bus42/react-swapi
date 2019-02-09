@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Menu from './components/views/Menu';
+import Menu from './components/routes/Menu';
 import Footer from './components/views/Footer';
 import Header from './components/views/Header';
 
