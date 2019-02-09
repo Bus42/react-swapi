@@ -52,7 +52,7 @@ class Menu extends Component {
         console.log(cards);
 
         return (
-            <div id='Menu'>
+            <div id='Menu' className="container">
                 {cards.map(card => <div key={card.id} className="card grey darken-3">
                 <div className="card-image">
                     <img src={card.image} alt={card.title}/>

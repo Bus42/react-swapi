@@ -8,3 +8,46 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #757575;
 }
+div.card {
+  padding: 8px;
+}
+#Menu {
+  display: grid;
+  grid-gap: 8px;
+  min-height: 100vh;
+  align-items: center;
+}
+@media all and (min-width: 1501px) {
+  #Menu {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+    "one, two, three", 
+    "four, five, six";
+  }
+}
+
+@media all and (min-width: 1001px) and (max-width: 1500px) {
+  #Menu {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    "one, two,",
+    "three, four", 
+    "five, six";
+  }
+}
+
+@media all and (max-width: 1000px) {
+  #Menu {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six";
+  }
+}
