@@ -24,9 +24,6 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--yellow) !important;
   font-weight: bold;
 }
-div.card {
-  padding: 8px;
-}
 #Menu {
   display: grid;
   grid-gap: 8px;

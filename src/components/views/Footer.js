@@ -14,10 +14,13 @@ class Footer extends Component {
         return (
             <footer className="page-footer grey darken-2">
                 <div className="container">
-                    <div className="row">
+                    <div className="row" style={{marginBottom: "0"}}>
                         <h5>Libraries and Frameworks Used</h5>
-                        <ul>
-                            {this.state.used.map(library => <li key={this.state.used.indexOf(library)}>{library}</li>)}
+                        <ul style={{
+                            display: 'flex',
+                            flexFlow: 'row wrap'
+                            }} >
+                            {this.state.used.map(library => <li style={{display: "inline", padding: "3px 6px"}} key={this.state.used.indexOf(library)}>{library}</li>)}
                         </ul>
                     </div>
                 </div>
