@@ -13,10 +13,11 @@ class Header extends Component{
     render(){
 
         return (
-            <nav className="grey darken-3" >
-                <span className="right">
-                <i className="fas fa-journal-whills fa-2x" style={{padding: "12px", cursor: "pointer"}} ></i>
-                </span>
+            <nav  className="grey darken-3" >
+            <h5 className="brand-logo">The Wars</h5>
+            <span className="right">
+            <i className="fas fa-journal-whills fa-2x" style={{padding: "12px", cursor: "pointer"}} ></i>
+            </span>
             </nav>
         )
     }
