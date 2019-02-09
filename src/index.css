@@ -24,14 +24,14 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--yellow) !important;
   font-weight: bold;
 }
-#Menu {
+#Home {
   display: grid;
   grid-gap: 8px;
   min-height: 100vh;
   align-items: center;
 }
 @media all and (min-width: 1501px) {
-  #Menu {
+  #Home {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas: 
@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media all and (min-width: 1001px) and (max-width: 1500px) {
-  #Menu {
+  #Home {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas: 
@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media all and (max-width: 1000px) {
-  #Menu {
+  #Home {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, 1fr);
     grid-template-areas: 
