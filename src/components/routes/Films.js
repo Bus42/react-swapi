@@ -63,7 +63,7 @@ class Films extends Component {
                                         }}
                                             className="card grey darken-2">
                                             <h6 onClick={() => this.getData([...result.characters], result.title, 'characters')} >Characters</h6>
-                                            {this.state[result.title] ? this.state[result.title].characters.map((character, index) => <button key={index} type="button" className="btn waves-effect waves-light grey darken-3" style={{display: "inline", margin: "8px"}}> <a style={{color: "white"}} href={character.url} target={character.name}>{character.name}</a> </button>
+                                            {this.state[result.title] ? this.state[result.title].characters.map((character, index) => <button key={index} type="button" className="btn waves-effect waves-light grey darken-3" style={{display: "inline", margin: "8px"}}> <a style={{color: "white"}} href={`https://starwars.fandom.com/wiki/${character.name}`} target={character.name}>{character.name}</a> </button>
                                             ) : <hr style={{borderColor: "var(--yellow)"}} /> }
                                         </div>
 
