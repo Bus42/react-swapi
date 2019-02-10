@@ -77,7 +77,7 @@ class Menu extends Component {
             <Router>
                 <div>
                     <Route path="/" exact component={() => <Home/>}/>
-                    <Route path="/people" component={() => <People/>}/>
+                    <Route path="/characters" component={() => <People/>}/>
                     <Route path="/planets" component={() => <Planets/>}/>
                     <Route path="/species" component={() => <Species/>}/>
                     <Route path="/vehicles" component={() => <Vehicles/>}/>
