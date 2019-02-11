@@ -4,6 +4,10 @@ import Footer from './components/views/Footer';
 import Header from './components/views/Header';
 
 class App extends Component {
+
+  componentDidMount(){
+  }
+
   render () {
     return (
       <div id="App">

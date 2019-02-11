@@ -40,18 +40,19 @@ class Films extends Component {
 
         return (
             <div className="container">
+                <h3>Films</h3>
+                <ul className="collapsible">
                 {this.state.data
                     ? this
                         .state
                         .data
                         .results
                         .sort((a,b) => a.episode_id - b.episode_id)
-                        .map((result, index) => <div key={index} className="card grey darken-3">
-                            <div
-                                className="card-title"
-                                style={{
-                                padding: "8px"
-                            }}>{result.title}</div>
+                        .map((result, index) => <li key={index}>
+                            <div className="collapsible-header grey darken-4">{result.title}</div>
+                            <div className="collapsible-body">
+                                <div className="card grey darken-3">
+
                             <div className="card-content">Episode {result.episode_id}</div>
                             <div className="card-content">
                                 <h5>{result.opening_crawl}</h5>
@@ -113,11 +114,13 @@ class Films extends Component {
                                     }}>{result.producer}</span>
                                 </p>
                             </div>
-
-                        </div>)
+                                </div>
+                            </div>
+                        </li> )
                     : <div className="progress">
                         <div className="indeterminate"></div>
                     </div>}
+                    </ul>
             </div>
         )
     }
