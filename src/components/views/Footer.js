@@ -12,7 +12,7 @@ class Footer extends Component {
     render(){
 
         return (
-            <footer className="page-footer grey darken-2">
+            <footer id="Footer" className="page-footer grey darken-2">
                 <div className="container">
                     <div className="row" style={{marginBottom: "0"}}>
                         <h5>Libraries and Frameworks Used</h5>
