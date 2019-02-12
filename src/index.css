@@ -41,6 +41,12 @@ h1, h2, h3, h4, h5, h6 {
   grid-gap: 8px;
   align-items: center;
 }
+.link-text {
+  color: var(--silver);
+}
+.link-text:hover {
+  color: var(--yellow);
+}
 /* Large screens */
 @media all and (min-width: 1201px) {
   #Home {

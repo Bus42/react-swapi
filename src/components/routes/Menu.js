@@ -75,7 +75,7 @@ class Menu extends Component {
 
         return (
             <Router>
-                <div>
+                <div id="Router-wrapper" style={{marginTop: "3em"}}>
                     <Route path="/" exact component={() => <Home/>}/>
                     <Route path="/characters" component={() => <People/>}/>
                     <Route path="/planets" component={() => <Planets/>}/>

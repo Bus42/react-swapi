@@ -5,7 +5,7 @@ class Footer extends Component {
       super(props)
     
       this.state = {
-          used: ["React", "React Router", "Materialize", "CSS Grid", "Star Wars API"]
+          used: ["React", "React Router", "Materialize", "CSS Grid", "Star Wars API", "CSS Flexbox"]
       }
     }
 

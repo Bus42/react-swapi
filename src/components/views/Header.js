@@ -12,26 +12,31 @@ class Header extends Component {
     render() {
 
         return (
-            <nav className="grey darken-3">
-                <h5
-                    className="brand-logo left"
-                    style={{
+            <nav
+                className="grey darken-3"
+                style={{
+                display: "flex",
+                flexFlow: "row nowrap",
+                justifyContent: "flex-start",
+                alignItems: "baseline"
+            }}>
+                <a href="/">
+                    <i
+                        className="fas fa-journal-whills"
+                        style={{
+                        cursor: "pointer",
+                        color: "var(--red)",
+                        fontSize: "3.25em",
+                        position: "relative",
+                        top: "10px",
+                        left: "10px"
+                    }}></i>
+                </a>
+                <h5 style={{
+                    display: "inline-block",
                     position: "relative",
-                    left: "8px"
-                }}>The Wars</h5>
-                <span className="right">
-                    <a href="/">
-                        <i
-                            className="fas fa-journal-whills fa-3x"
-                            style={{
-                            cursor: "pointer",
-                            color: "var(--silver)",
-                            position: "absolute",
-                            top: "10px",
-                            right: "12px"
-                        }}></i>
-                    </a>
-                </span>
+                    left: "22px"
+                    }}>React SWAPI</h5>
             </nav>
         )
     }
