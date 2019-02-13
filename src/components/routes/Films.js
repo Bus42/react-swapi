@@ -89,7 +89,7 @@ class Films extends Component {
                                         <div
                                             className="collapsible-body"
                                             style={{
-                                            borderColor: "var(--yellow)",
+                                            borderColor: "var(--red)",
                                             padding: 0
                                         }}>
                                             <div className="card grey darken-3">
@@ -116,6 +116,10 @@ class Films extends Component {
                                                                 <h6
                                                                     className="link-text"
                                                                     onClick={() => this.handleClick([...result.characters], result.title, 'characters')}>Characters</h6>
+                                                                    <hr
+                                                                        style={{
+                                                                        borderColor: "var(--red)"
+                                                                    }}/>
                                                                 {this.state[result.title]
                                                                     ? this
                                                                         .state[result.title]
@@ -133,10 +137,7 @@ class Films extends Component {
                                                                                     target={character.name}>{character.name}</a>
                                                                             </div>
                                                                         ))
-                                                                    : <hr
-                                                                        style={{
-                                                                        borderColor: "var(--yellow)"
-                                                                    }}/>}
+                                                                    : <span></span> }
                                                             </div>
 
                                                         </li>
