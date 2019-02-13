@@ -8,16 +8,12 @@ class Films extends Component {
             data: null
         }
     }
-
-    componentDidMount() {
-        fetch('https://swapi.co/api/films')
-            .then(res => res.json())
-            .then(data => this.setState({data}))
-            .catch(err => console.error(err))
-            . finally(() => {
-                console.log(this.state.data || 'fetch on mount failed');
-            });
+    
+    componentDidMount(){
+        this.props.getData(this.props.url)
+        .then(data => this.setState({data}))
     }
+
     handleClick = async(arr, title, category) => {
         let newState = {
             ...this.state
@@ -120,7 +116,7 @@ class Films extends Component {
                                                                 className="card grey darken-3">
                                                                 <h6
                                                                     className="link-text"
-                                                                    onClick={() => this.handleClick([...result.characters], result.title, 'characters').then(()=>console.log(sessionStorage))}>Characters</h6>
+                                                                    onClick={() => this.handleClick([...result.characters], result.title, 'characters')}>Characters</h6>
                                                                 {this.state[result.title]
                                                                     ? this
                                                                         .state[result.title]
