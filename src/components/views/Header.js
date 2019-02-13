@@ -28,7 +28,7 @@ class Header extends Component {
                         style={{
                         cursor: "pointer",
                         color: "var(--red)",
-                        fontSize: "3.25em",
+                        fontSize: "3em",
                         position: "relative",
                         top: "10px",
                         left: "10px"
