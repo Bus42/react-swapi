@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 
+import CharactersList from './components/routes/CharactersList';
+import FilmsList from './components/routes/FilmsList';
+import PlanetsList from './components/routes/PlanetsList';
+import SpeciesList from './components/routes/SpeciesList';
+import StarshipsList from './components/routes/StarshipsList';
+import VehiclesList from './components/routes/VehiclesList';
+
 import Footer from './components/views/Footer';
+import Home from './components/views/Home';
 import Header from './components/views/Header';
-import People from './components/routes/People'
-import Films from './components/routes/Films'
-import Planets from './components/routes/Planets'
-import Species from './components/routes/Species'
-import Starships from './components/routes/Starships'
-import Vehicles from './components/routes/Vehicles'
-import Home from './components/routes/Home'
 
 import characters from './assets/characters.jpg';
 import planets from './assets/planets.png';
@@ -86,29 +87,30 @@ class App extends Component {
             <Router>
                 <div id="App">
                     <Header/>
-                    <div style={{
+                    <div
+                        style={{
                         marginTop: "5em",
                         paddingBottom: "1em"
                     }}>
                         <Route path="/" exact component={() => <Home cards={this.state.cards}/>}/>
                         <Route
                             path="/characters"
-                            component={() => <People url={this.state.endpoints.characters} getData={this.getData}/>}/>
+                            component={() => <CharactersList url={this.state.endpoints.characters} getData={this.getData}/>}/>
                         <Route
                             path="/planets"
-                            component={() => <Planets url={this.state.endpoints.planets} getData={this.getData}/>}/>
+                            component={() => <PlanetsList url={this.state.endpoints.planets} getData={this.getData}/>}/>
                         <Route
                             path="/species"
-                            component={() => <Species url={this.state.endpoints.species} getData={this.getData}/>}/>
+                            component={() => <SpeciesList url={this.state.endpoints.species} getData={this.getData}/>}/>
                         <Route
                             path="/vehicles"
-                            component={() => <Vehicles url={this.state.endpoints.vehicles} getData={this.getData}/>}/>
+                            component={() => <VehiclesList url={this.state.endpoints.vehicles} getData={this.getData}/>}/>
                         <Route
                             path="/starships"
-                            component={() => <Starships url={this.state.endpoints.starships} getData={this.getData}/>}/>
+                            component={() => <StarshipsList url={this.state.endpoints.starships} getData={this.getData}/>}/>
                         <Route
                             path="/films"
-                            component={() => <Films url={this.state.endpoints.films} getData={this.getData}/>}/>
+                            component={() => <FilmsList url={this.state.endpoints.films} getData={this.getData}/>}/>
                     </div>
                     <Footer/>
                 </div>

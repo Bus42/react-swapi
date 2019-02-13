@@ -116,11 +116,10 @@ class Films extends Component {
                                                                 <h6
                                                                     className="link-text"
                                                                     onClick={() => this.handleClick([...result.characters], result.title, 'characters')}>Characters</h6>
-                                                                    <hr
-                                                                        style={{
-                                                                        borderColor: "var(--red)"
-                                                                    }}/>
-                                                                {this.state[result.title]
+                                                                <hr
+                                                                    style={{
+                                                                    borderColor: "var(--red)"
+                                                                }}/> {this.state[result.title]
                                                                     ? this
                                                                         .state[result.title]
                                                                         .characters
@@ -137,7 +136,7 @@ class Films extends Component {
                                                                                     target={character.name}>{character.name}</a>
                                                                             </div>
                                                                         ))
-                                                                    : <span></span> }
+                                                                    : <span></span>}
                                                             </div>
 
                                                         </li>

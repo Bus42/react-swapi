@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class People extends Component {
+class CharactersList extends Component {
     constructor(props) {
         super(props)
 
@@ -20,7 +20,7 @@ class People extends Component {
 
         return (
             <div className="container">
-                <h3>Planets</h3>
+                <h3>Characters</h3>
                 <ul
                     className="collapsible grey darken-3"
                     style={{
@@ -75,4 +75,4 @@ class People extends Component {
 
 }
 
-export default People;
+export default CharactersList;
