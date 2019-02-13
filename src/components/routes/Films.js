@@ -18,7 +18,6 @@ class Films extends Component {
                 console.log(this.state.data || 'fetch on mount failed');
             });
     }
-
     handleClick = async(arr, title, category) => {
         let newState = {
             ...this.state
@@ -31,20 +30,36 @@ class Films extends Component {
             newState[title][category] = []
             for (let url = 0; url < arr.length; url++) {
                 const current = arr[url];
-                fetch(current)
+
+                //find if record already exists in local storage
+                const data = localStorage.getItem(`${current}`);
+                if(data){
+                    console.log(`%cRecord for ${JSON.parse(localStorage[current]).name} already exists in local storage.`, "color: #E0BE46");
+                    newState[title][category] = [
+                        ...newState[title][category],
+                        data
+                    ]
+                    this.setState({
+                        ...newState
+                    })
+            }
+                if(data === null){
+                    console.log(`%cFetching ${current}`, "color: #939393")
+                    fetch(current)
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
+                        //store item in local storage to avoid fetching any data a second time
+                        localStorage.setItem(`${current}`, JSON.stringify(data))
                         newState[title][category] = [
                             ...newState[title][category],
                             data
                         ]
-                        localStorage.setItem(data.name, data)
                         this.setState({
                             ...newState
                         })
                     })
                     .catch(err => console.error(err))
+                }
             }
         }
     }
@@ -102,7 +117,7 @@ class Films extends Component {
                                                                 className="collection grey darken-3">
                                                                 <h6
                                                                     className="link-text"
-                                                                    onClick={() => this.handleClick([...result.characters], result.title, 'characters').then(()=>console.log(sessionStorage))}>Characters</h6>
+                                                                    onClick={() => this.handleClick([...result.characters], result.title, 'characters').then(()=>console.log(localStorage))}>Characters</h6>
                                                                 {this.state[result.title]
                                                                     ? this
                                                                         .state[result.title]
