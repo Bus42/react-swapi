@@ -8,10 +8,12 @@ class Films extends Component {
             data: null
         }
     }
-    
-    componentDidMount(){
-        this.props.getData(this.props.url)
-        .then(data => this.setState({data}))
+
+    componentDidMount() {
+        this
+            .props
+            .getData(this.props.url)
+            .then(data => this.setState({data}))
     }
 
     handleClick = async(arr, title, category) => {
@@ -29,7 +31,7 @@ class Films extends Component {
 
                 //find if record already exists in local storage
                 const data = JSON.parse(sessionStorage.getItem(`${current}`));
-                if(data){
+                if (data) {
                     console.log(`%cRecord for ${JSON.parse(sessionStorage[current]).name} already exists in local storage.`, "color: #E0BE46");
                     newState[title][category] = [
                         ...newState[title][category],
@@ -38,23 +40,23 @@ class Films extends Component {
                     this.setState({
                         ...newState
                     })
-            }
-                if(data === null){
+                }
+                if (data === null) {
                     console.log(`%cFetching ${current}`, "color: #939393")
                     fetch(current)
-                    .then(res => res.json())
-                    .then(data => {
-                        //store item in local storage to avoid fetching any data a second time
-                        sessionStorage.setItem(`${current}`, JSON.stringify(data))
-                        newState[title][category] = [
-                            ...newState[title][category],
-                            data
-                        ]
-                        this.setState({
-                            ...newState
+                        .then(res => res.json())
+                        .then(data => {
+                            //store item in local storage to avoid fetching any data a second time
+                            sessionStorage.setItem(`${current}`, JSON.stringify(data))
+                            newState[title][category] = [
+                                ...newState[title][category],
+                                data
+                            ]
+                            this.setState({
+                                ...newState
+                            })
                         })
-                    })
-                    .catch(err => console.error(err))
+                        .catch(err => console.error(err))
                 }
             }
         }
@@ -63,10 +65,7 @@ class Films extends Component {
     render() {
 
         return (
-            <div 
-            id="Films"
-            className="container"
-            >
+            <div id="Films" className="container">
                 <h3>Films</h3>
                 <ul
                     className="collapsible"

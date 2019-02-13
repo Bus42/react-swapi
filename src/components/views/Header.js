@@ -34,11 +34,12 @@ class Header extends Component {
                         left: "10px"
                     }}></i>
                 </a>
-                <h5 style={{
+                <h5
+                    style={{
                     display: "inline-block",
                     position: "relative",
                     left: "22px"
-                    }}>React SWAPI</h5>
+                }}>React SWAPI</h5>
             </nav>
         )
     }
