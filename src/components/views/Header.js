@@ -1,25 +1,45 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
-class Header extends Component{
+class Header extends Component {
     constructor(props) {
-      super(props)
-    
-      this.state = {
-         data: null
-      }
-    }
-    
+        super(props)
 
-    render(){
+        this.state = {
+            data: null
+        }
+    }
+
+    render() {
 
         return (
-            <nav  className="grey darken-3" >
-                <h5 className="brand-logo left" style={{position: "relative", left: "8px"}}>The Wars</h5>
-                <span className="right">
-                    <a href="/">
-                        <i className="fas fa-journal-whills fa-2x" style={{padding: "12px", cursor: "pointer"}} ></i>
-                    </a>
-                </span>
+            <nav
+                className="grey darken-3"
+                style={{
+                display: "flex",
+                flexFlow: "row nowrap",
+                justifyContent: "flex-start",
+                alignItems: "baseline",
+                position: "absolute",
+                top: 0
+            }}>
+                <a href="/">
+                    <i
+                        className="fas fa-journal-whills"
+                        style={{
+                        cursor: "pointer",
+                        color: "var(--red)",
+                        fontSize: "3em",
+                        position: "relative",
+                        top: "10px",
+                        left: "10px"
+                    }}></i>
+                </a>
+                <h5
+                    style={{
+                    display: "inline-block",
+                    position: "relative",
+                    left: "22px"
+                }}>React SWAPI</h5>
             </nav>
         )
     }

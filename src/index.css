@@ -7,8 +7,8 @@
   --black: #060606;
 }
 body {
-  margin: 0;
-  padding: 0;
+  overflow-x: hidden;
+  border: none !important;
   font-family: 'Audiowide', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -16,6 +16,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #757575;
   color: var(--yellow);
+  background: url(./assets/background.jpg);
+  background-attachment: fixed;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Coda', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -24,13 +26,29 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--yellow) !important;
   font-weight: bold;
 }
+#App {
+  min-height: 100vh;
+  min-width: 100vw;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
 #Home {
   display: grid;
   grid-gap: 8px;
-  min-height: 100vh;
   align-items: center;
 }
-@media all and (min-width: 1501px) {
+.link-text {
+  color: var(--silver);
+}
+.link-text:hover {
+  color: var(--yellow);
+}
+/* Large screens */
+@media all and (min-width: 1201px) {
   #Home {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -39,8 +57,8 @@ h1, h2, h3, h4, h5, h6 {
     "four, five, six";
   }
 }
-
-@media all and (min-width: 1001px) and (max-width: 1500px) {
+/* Medium screens */
+@media all and (min-width: 651px) and (max-width: 1200px) {
   #Home {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -49,9 +67,12 @@ h1, h2, h3, h4, h5, h6 {
     "three, four", 
     "five, six";
   }
+  body {
+    background-position: bottom right;
+  }
 }
-
-@media all and (max-width: 1000px) {
+/* Small screens */
+@media all and (max-width: 650px) {
   #Home {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, 1fr);
@@ -62,5 +83,8 @@ h1, h2, h3, h4, h5, h6 {
     "four",
     "five",
     "six";
+  }
+  body {
+    background-position: bottom right;
   }
 }

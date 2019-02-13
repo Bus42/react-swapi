@@ -5,14 +5,14 @@ class Footer extends Component {
       super(props)
     
       this.state = {
-          used: ["React", "React Router", "Materialize", "CSS Grid", "Star Wars API"]
+          used: ["React", "React Router", "Materialize", "CSS Grid", "Star Wars API", "CSS Flexbox"]
       }
     }
 
     render(){
 
         return (
-            <footer className="page-footer grey darken-2">
+            <footer id="Footer" className="page-footer grey darken-2">
                 <div className="container">
                     <div className="row" style={{marginBottom: "0"}}>
                         <h5>Libraries and Frameworks Used</h5>
