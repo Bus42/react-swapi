@@ -87,7 +87,8 @@ class App extends Component {
                 <div id="App">
                     <Header/>
                     <div style={{
-                        marginTop: "5em"
+                        marginTop: "5em",
+                        paddingBottom: "1em"
                     }}>
                         <Route path="/" exact component={() => <Home cards={this.state.cards}/>}/>
                         <Route
