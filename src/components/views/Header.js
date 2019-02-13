@@ -18,7 +18,9 @@ class Header extends Component {
                 display: "flex",
                 flexFlow: "row nowrap",
                 justifyContent: "flex-start",
-                alignItems: "baseline"
+                alignItems: "baseline",
+                position: "absolute",
+                top: 0
             }}>
                 <a href="/">
                     <i

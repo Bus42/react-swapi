@@ -32,9 +32,9 @@ class Films extends Component {
                 const current = arr[url];
 
                 //find if record already exists in local storage
-                const data = JSON.parse(localStorage.getItem(`${current}`));
+                const data = JSON.parse(sessionStorage.getItem(`${current}`));
                 if(data){
-                    console.log(`%cRecord for ${JSON.parse(localStorage[current]).name} already exists in local storage.`, "color: #E0BE46");
+                    console.log(`%cRecord for ${JSON.parse(sessionStorage[current]).name} already exists in local storage.`, "color: #E0BE46");
                     newState[title][category] = [
                         ...newState[title][category],
                         data
@@ -49,7 +49,7 @@ class Films extends Component {
                     .then(res => res.json())
                     .then(data => {
                         //store item in local storage to avoid fetching any data a second time
-                        localStorage.setItem(`${current}`, JSON.stringify(data))
+                        sessionStorage.setItem(`${current}`, JSON.stringify(data))
                         newState[title][category] = [
                             ...newState[title][category],
                             data
@@ -67,7 +67,10 @@ class Films extends Component {
     render() {
 
         return (
-            <div id="Films">
+            <div 
+            id="Films"
+            className="container"
+            >
                 <h3>Films</h3>
                 <ul
                     className="collapsible"
@@ -114,10 +117,10 @@ class Films extends Component {
                                                                 style={{
                                                                 padding: "8px"
                                                             }}
-                                                                className="collection grey darken-3">
+                                                                className="card grey darken-3">
                                                                 <h6
                                                                     className="link-text"
-                                                                    onClick={() => this.handleClick([...result.characters], result.title, 'characters').then(()=>console.log(localStorage))}>Characters</h6>
+                                                                    onClick={() => this.handleClick([...result.characters], result.title, 'characters').then(()=>console.log(sessionStorage))}>Characters</h6>
                                                                 {this.state[result.title]
                                                                     ? this
                                                                         .state[result.title]
