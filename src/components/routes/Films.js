@@ -32,7 +32,7 @@ class Films extends Component {
                 const current = arr[url];
 
                 //find if record already exists in local storage
-                const data = localStorage.getItem(`${current}`);
+                const data = JSON.parse(localStorage.getItem(`${current}`));
                 if(data){
                     console.log(`%cRecord for ${JSON.parse(localStorage[current]).name} already exists in local storage.`, "color: #E0BE46");
                     newState[title][category] = [
