@@ -25,27 +25,15 @@ class List extends Component {
         return (
             <div className="container">
                 <h3>{this.props.header}</h3>
-                <ul
-                    className="collapsible grey darken-3"
-                    style={{
-                    border: "none"
-                }}>
                     {this.state.data
-                        ? <ul>
+                        ? <div>
                                 {this
                                     .state
                                     .data
                                     .results
                                     .map((result, index) => (
-                                        <div
-                                            key={index}
-                                            className="collapsible-header grey darken-4"
-                                            style={{
-                                            borderColor: "var(--red)"
-                                        }}>
-                                            <li>
-                                                <a className="link-text" href={result.url} target="new">{result.name || result.title}</a>
-                                            </li>
+                                        <div className="card grey darken-4" key={index}>
+                                                <div style={{padding: "8px 13px"}} className="card-title link-text">{result.name || result.title}</div>
                                         </div>
                                     ))}
                                 {this.state.data.previous
@@ -70,11 +58,10 @@ class List extends Component {
                                             <span>Next</span>
                                         </button>
                                     : <span></span>}
-                            </ul>
+                            </div>
                         : <div className="progress">
                             <div className="indeterminate"></div>
                         </div>}
-                </ul>
             </div>
         )
     }
