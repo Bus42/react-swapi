@@ -39,11 +39,13 @@ class List extends Component {
                                     .map((result, index) => (
                                         <div
                                             key={index}
-                                            className="collapsible-header grey darken-4 link-text"
+                                            className="collapsible-header grey darken-4"
                                             style={{
                                             borderColor: "var(--red)"
                                         }}>
-                                            <li>{result.name || result.title}</li>
+                                            <li>
+                                                <a className="link-text" href={result.url} target="new">{result.name || result.title}</a>
+                                            </li>
                                         </div>
                                     ))}
                                 {this.state.data.previous
