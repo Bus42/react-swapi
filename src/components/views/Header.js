@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
     constructor(props) {
@@ -22,7 +23,7 @@ class Header extends Component {
                 position: "absolute",
                 top: 0
             }}>
-                <a href="/">
+                <Link to="/">
                     <i
                         className="fas fa-journal-whills"
                         style={{
@@ -33,7 +34,7 @@ class Header extends Component {
                         top: "10px",
                         left: "10px"
                     }}></i>
-                </a>
+                </Link>
                 <h5
                     style={{
                     display: "inline-block",

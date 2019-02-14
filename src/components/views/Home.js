@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = (props) => {
     const cards = props.cards
@@ -10,7 +11,7 @@ const Home = (props) => {
                             <img src={card.image} alt={card.title}/>
                         </div>
                         <div className="card-action">
-                            <a href={card.link}>{card.title}</a>
+                            <Link to={card.URL}>{card.title}</Link>
                         </div>
                     </div>)}
                 </div>

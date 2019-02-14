@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class CharactersList extends Component {
+class List extends Component {
     constructor(props) {
         super(props)
 
@@ -10,6 +10,10 @@ class CharactersList extends Component {
     }
 
     componentDidMount() {
+        if(this.state.data){
+            console.log("Data already exists")
+            return null
+        }
         this
             .props
             .getData(this.props.url)
@@ -20,7 +24,7 @@ class CharactersList extends Component {
 
         return (
             <div className="container">
-                <h3>Characters</h3>
+                <h3>{this.props.header}</h3>
                 <ul
                     className="collapsible grey darken-3"
                     style={{
@@ -39,7 +43,7 @@ class CharactersList extends Component {
                                             style={{
                                             borderColor: "var(--red)"
                                         }}>
-                                            <li>{result.name}</li>
+                                            <li>{result.name || result.title}</li>
                                         </div>
                                     ))}
                                 {this.state.data.previous
@@ -75,4 +79,4 @@ class CharactersList extends Component {
 
 }
 
-export default CharactersList;
+export default List;
