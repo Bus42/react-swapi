@@ -37,7 +37,16 @@ class Detail extends Component {
                                         .dataKeys
                                         .map((dataKey, index) => {
                                             return (
-                                                <li key={index}>{dataKey.replace(/[_]/g, ' ').toUpperCase()}: <span style={{color: "var(--silver)"}} >{this.state.data[dataKey]}</span></li>
+                                                <li key={index}>
+                                                    <span>{dataKey
+                                                            .replace(/[_]/g, ' ')
+                                                            .toUpperCase()}:
+                                                    </span>
+                                                    <span
+                                                        style={{
+                                                        color: "var(--silver)"
+                                                    }}> {this.state.data[dataKey]}</span>
+                                                </li>
                                             )
                                         })}</ul>
                             : <div className="progress">

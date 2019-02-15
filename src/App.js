@@ -71,7 +71,7 @@ class App extends Component {
     }
 
     render() {
-        
+
         return (
             <Router>
                 <div id="App">
@@ -81,13 +81,22 @@ class App extends Component {
                         marginTop: "5em",
                         paddingBottom: "1em"
                     }}>
-                        <Route path="/" exact component={()=><Home cards={this.state.cards} />} />
-                    
-                        {this.state.cards.map((card, index) => <Route
-                            key={index}
-                            path={card.URL}
-                            component={() => <List header={card.title} url={`${this.state.baseURL}${card.URL}`} getData={this.getData}/>}/>)}
-                        <Route path="/detail/:id" component={Detail} />
+                        <Route
+                            path="/"
+                            exact
+                            component={() =>< Home cards = {
+                            this.state.cards
+                        } />}/> {this
+                            .state
+                            .cards
+                            .map((card, index) => <Route
+                                key={index}
+                                path={card.URL}
+                                component={() => <List
+                                header={card.title}
+                                url={`${this.state.baseURL}${card.URL}`}
+                                getData={this.getData}/>}/>)}
+                        <Route path="/detail/:id" component={Detail}/>
                     </div>
                     <Footer/>
                 </div>
