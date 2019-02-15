@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 
 class List extends Component {
     constructor(props) {
@@ -31,11 +32,14 @@ class List extends Component {
                                     .state
                                     .data
                                     .results
-                                    .map((result, index) => (
-                                        <div className="card grey darken-4" key={index}>
-                                                <div style={{padding: "8px 13px"}} className="card-title link-text">{result.name || result.title}</div>
-                                        </div>
-                                    ))}
+                                    .map((result, index) => { 
+                                        const linkTo = result.name ? result.name.toLowerCase().replace(/\s/g, '_') : result.title.toLowerCase().replace(/\s/g, '_');
+                                        return (
+                                        
+                                            <div className="card grey darken-4" key={index}>
+                                                    <div style={{padding: "8px 13px"}} className="card-title link-text"><Link to={`/detail/${linkTo}`}>{result.name || result.title}</Link></div>
+                                            </div>
+                                        )})}
                                 {this.state.data.previous
                                     ? <button
                                             className="btn waves-effect waves-light grey darken-2 left"

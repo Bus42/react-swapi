@@ -12,6 +12,7 @@ import species from './assets/species.jpg';
 import starships from './assets/starships.jpg';
 import films from './assets/films.jpeg';
 import vehicles from './assets/vehicles.jpg';
+import Detail from './components/routes/Detail';
 
 class App extends Component {
     constructor(props) {
@@ -80,11 +81,13 @@ class App extends Component {
                         marginTop: "5em",
                         paddingBottom: "1em"
                     }}>
-                    <Route path="/" exact component={()=><Home cards={this.state.cards} />} />
-                    {this.state.cards.map((card, index) => <Route
+                        <Route path="/" exact component={()=><Home cards={this.state.cards} />} />
+                    
+                        {this.state.cards.map((card, index) => <Route
                             key={index}
                             path={card.URL}
                             component={() => <List header={card.title} url={`${this.state.baseURL}${card.URL}`} getData={this.getData}/>}/>)}
+                        <Route path="/detail/:id" component={() => <Detail/>} />
                     </div>
                     <Footer/>
                 </div>
