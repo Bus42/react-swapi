@@ -1,26 +1,45 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
-class Detail extends Component{
+class Detail extends Component {
     state = {
         data: null
     }
 
-    componentDidMount(){
+    componentDidMount() {
         const data = this.props.location.state.data;
-        this.setState({data});
+        data.dataKeys = Object.keys(data);
+        this.setState({data})
     }
 
-    render(){
+    render() {
 
         return (
-            <div className="card grey darken-3">
-                <div className="card-title grey darken-3">
-                    <h3>Detail Component</h3>
+            <div className="container">
+                <div className="card grey darken-3">
+                    <div className="card-title grey darken-3">
+                        <h4
+                        style={{
+                            padding: "8px"
+                        }}
+                        >{this
+                                .props
+                                .match
+                                .params
+                                .id
+                                .toUpperCase()
+                                .replace(/[_]/g, ' ')}
+                        </h4>
+                    </div>
+                    <div className="card-content">
+                            {this.state.data ? <ul>{this.state.data.dataKeys.map((dataKey, index) => <li key={index}>{dataKey.replace(/[_]/g, ' ')}</li> )}</ul> : <div className="progress">
+                                <div className="indeterminate"></div>
+                            </div> }
+                    </div>
                 </div>
             </div>
         )
     }
-    
+
 }
 
 export default Detail;
