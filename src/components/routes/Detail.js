@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
-//import { Link } from 'react-router-dom';
 
 class Detail extends Component{
-    constructor(props) {
-      super(props)
-    
-      this.state = {
-         data: null
-      }
+    state = {
+        data: null
     }
 
     componentDidMount(){
-        console.log(this.props)
+        const data = this.props.location.state.data;
+        this.setState({data});
     }
 
     render(){

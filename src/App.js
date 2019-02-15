@@ -87,7 +87,7 @@ class App extends Component {
                             key={index}
                             path={card.URL}
                             component={() => <List header={card.title} url={`${this.state.baseURL}${card.URL}`} getData={this.getData}/>}/>)}
-                        <Route path="/detail/:id" component={() => <Detail/>} />
+                        <Route path="/detail/:id" component={Detail} />
                     </div>
                     <Footer/>
                 </div>

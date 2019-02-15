@@ -37,7 +37,14 @@ class List extends Component {
                                         return (
                                         
                                             <div className="card grey darken-4" key={index}>
-                                                    <div style={{padding: "8px 13px"}} className="card-title link-text"><Link to={`/detail/${linkTo}`}>{result.name || result.title}</Link></div>
+                                                    <div style={{padding: "8px 13px"}} className="card-title link-text"><Link to={
+                                                        {
+                                                            pathname: `/detail/${linkTo}`,
+                                                            state: {
+                                                                data: result
+                                                            }
+                                                        }
+                                                        }>{result.name || result.title}</Link></div>
                                             </div>
                                         )})}
                                 {this.state.data.previous
