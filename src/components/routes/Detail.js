@@ -18,10 +18,9 @@ class Detail extends Component {
                 <div className="card grey darken-3">
                     <div className="card-title grey darken-3">
                         <h4
-                        style={{
+                            style={{
                             padding: "8px"
-                        }}
-                        >{this
+                        }}>{this
                                 .props
                                 .match
                                 .params
@@ -31,9 +30,19 @@ class Detail extends Component {
                         </h4>
                     </div>
                     <div className="card-content">
-                            {this.state.data ? <ul>{this.state.data.dataKeys.map((dataKey, index) => <li key={index}>{dataKey.replace(/[_]/g, ' ')}</li> )}</ul> : <div className="progress">
+                        {this.state.data
+                            ? <ul>{this
+                                        .state
+                                        .data
+                                        .dataKeys
+                                        .map((dataKey, index) => {
+                                            return (
+                                                <li key={index}>{dataKey.replace(/[_]/g, ' ').toUpperCase()}: <span style={{color: "var(--silver)"}} >{this.state.data[dataKey]}</span></li>
+                                            )
+                                        })}</ul>
+                            : <div className="progress">
                                 <div className="indeterminate"></div>
-                            </div> }
+                            </div>}
                     </div>
                 </div>
             </div>
