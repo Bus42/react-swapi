@@ -11,14 +11,11 @@ class List extends Component {
     }
 
     componentDidMount() {
-        if (this.state.data) {
-            console.log("Data already exists")
-            return null
-        }
+        //check local storage for record indicated by url
         this
             .props
             .getData(this.props.url)
-            .then(data => this.setState({data}))
+            .then(data => this.setState({data}));
     }
 
     render() {

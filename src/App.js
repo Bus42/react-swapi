@@ -56,17 +56,26 @@ class App extends Component {
         }
     }
     getData = (url) => {
-        // Add function to check local storage for URL record - if so, set state from
-        // local storage - if not, proceed to fetch then store data in local storage
         console.log(`fetching ${url}`)
         return new Promise((resolve, reject) => {
-            fetch(url)
-                .then(res => res.json())
-                .then(data => resolve(data))
-                .catch(err => reject(err))
-                . finally(() => {
-                    console.log("Data fetched" || 'fetch on mount failed');
-                });
+            //check if url record exists in session storage
+            if (sessionStorage.getItem(url)) {
+                console.log("URL record exists in session storage")
+                const data = JSON.parse(sessionStorage.getItem(url));
+                console.log(data)
+                //resolve data in local storage
+                resolve(data)
+            } else {
+                fetch(url)
+                    .then(res => res.json())
+                    .then(data => {
+                        const toStorage = JSON.stringify(data);
+                        sessionStorage.setItem(`${url}`, toStorage);
+                        console.log(data);
+                        resolve(data);
+                    })
+                    .catch(err => reject(err));
+            }
         })
     }
 
