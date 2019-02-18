@@ -69,9 +69,11 @@ class App extends Component {
                 fetch(url)
                     .then(res => res.json())
                     .then(data => {
-                        const toStorage = JSON.stringify(data);
-                        sessionStorage.setItem(`${url}`, toStorage);
-                        console.log(data);
+                        const results = data.results;
+                        for (let i = 0; i < results.length; i++) {
+                            const resultUrl = results[i].url;
+                            sessionStorage.setItem(`${resultUrl}`, JSON.stringify(results[i]))
+                        }
                         resolve(data);
                     })
                     .catch(err => reject(err));
@@ -93,9 +95,8 @@ class App extends Component {
                         <Route
                             path="/"
                             exact
-                            component={() =>< Home cards = {
-                            this.state.cards
-                        } />}/> {this
+                            component={() =>< Home cards={this.state.cards} />}/>
+                            {this
                             .state
                             .cards
                             .map((card, index) => <Route
@@ -104,7 +105,8 @@ class App extends Component {
                                 component={() => <List
                                 header={card.title}
                                 url={`${this.state.baseURL}${card.URL}`}
-                                getData={this.getData}/>}/>)}
+                                getData={this.getData}/>}
+                                />)}
                         <Route path="/detail/:id" component={Detail}/>
                     </div>
                     <Footer/>
